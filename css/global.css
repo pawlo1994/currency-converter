@@ -7,7 +7,9 @@ html {
 }
 
 body {
-    background-color: #ccc;
+    background-image: url("../images/background.jpg")
+    background-size: cover;
+    background-position: center;
     font-family: 'Orelega One', cursive;
     font-size: 18px;
 }
