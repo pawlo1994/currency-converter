@@ -1,0 +1,15 @@
+.header {
+    margin: 20px auto;
+    background-color: rgb(140, 178, 197);
+    max-width: 1024px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px 3px #333;
+}
+
+.header__title {
+    font-size: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px;
+}

@@ -1,0 +1,33 @@
+.main {
+    width: 100%;
+    max-width: 1024px;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+.main--januszed {
+    background-size: cover;
+    background-position: center center;
+    background-image: url("https://www.wykop.pl/cdn/c3201142/comment_xhVkKSzC16mBnUknsijNpxn7avyEsHmy.jpg");
+}
+
+.main__button {
+    display: block;
+    font-size: 20px;
+    width: 100px;
+    padding: 10px;
+    margin: 10px auto;
+    background-color: #ccc;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px #000;
+}
+
+.main__button:hover {
+    background-color: #eee;
+}
+
+.main__button:active {
+    background-color: #333;
+    color: #fff;
+}

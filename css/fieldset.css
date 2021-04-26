@@ -1,0 +1,36 @@
+.fieldset {
+    background-color: rgba(140, 178, 197, 0.507);
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px #333;
+    border: 1px solid #eee;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+.fieldset__legend {
+    font-size: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.fieldset__list {
+    padding: 20px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 360px;
+    background-color: rgba(221, 221, 221, 0.507);
+    border-radius: 10px;
+    list-style-type: none;
+}
+
+.fieldset__item {
+    font-size: 24px;
+}
+
+.fieldset__span {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+}

@@ -1,0 +1,23 @@
+.form__label {
+    display: inline-block;
+    width: 20%;
+    margin: 10px 5px;
+    text-align: right;
+}
+
+.form__input {
+    display: inline-block;
+    width: 60%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.form__input:invalid {
+    box-shadow: 0px 0px 2px 2px #c00;
+}
+
+.form__field {
+    margin: 5px auto;
+    max-width: 360px;
+    width: 100%;
+}
