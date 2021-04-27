@@ -1,21 +1,41 @@
-let main = document.querySelector(".js-main");
-let mainForm = document.querySelector(".js-form");
-let mainInputPln = document.querySelector(".js-form__input--pln");
-let eurElement = document.querySelector(".js-eur__value");
-let chfElement = document.querySelector(".js-chf__value");
-let usdElement = document.querySelector(".js-usd__value");
-let plnValueElement = +mainInputPln.value;
-let eurValueElement = 4.56;
-let chfValueElement = 4.13;
-let usdValueElement = 3.81;
-mainForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (+mainInputPln.value >= 1000000) {
-        main.classList.add("main--januszed");
-    } else {
-        main.classList.remove("main--januszed");
+{
+    const mainForm = document.querySelector(".js-form");
+    const mainInputPln = document.querySelector(".js-form__input--pln");
+
+    const init = () => {
+        console.log("Welcome to currency converter v1.1 by Paweł Suchy");
     };
-    eurElement.innerText = (+mainInputPln.value / eurValueElement).toFixed(2);
-    chfElement.innerText = (+mainInputPln.value / chfValueElement).toFixed(2);
-    usdElement.innerText = (+mainInputPln.value / usdValueElement).toFixed(2);
-});
+
+    const changeMainBackground = () => {
+        const main = document.querySelector(".js-main");
+        if (+mainInputPln.value >= 1000000) {
+            main.classList.add("main--januszed");
+        } else {
+            main.classList.remove("main--januszed");
+        };
+    };
+
+    const convertPlnToOtherCurrency = (currencyValue) => {
+        let plnValueElement = +mainInputPln.value;
+        return (plnValueElement / currencyValue).toFixed(2);
+    };
+
+    const assignValueIntoTextField = () => {
+        const eurValueElement = 4.56;
+        const chfValueElement = 4.13;
+        const usdValueElement = 3.81;
+        const eurElement = document.querySelector(".js-eur__value");
+        const chfElement = document.querySelector(".js-chf__value");
+        const usdElement = document.querySelector(".js-usd__value");
+        eurElement.innerText = convertPlnToOtherCurrency(eurValueElement);
+        chfElement.innerText = convertPlnToOtherCurrency(chfValueElement);
+        usdElement.innerText = convertPlnToOtherCurrency(usdValueElement);
+    };
+
+    init();
+    mainForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        changeMainBackground();
+        assignValueIntoTextField();
+    });
+}
