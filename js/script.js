@@ -1,41 +1,46 @@
 {
     const mainForm = document.querySelector(".js-form");
-    const mainInputPln = document.querySelector(".js-form__input--pln");
 
-    const init = () => {
+    const welcome = () => {
         console.log("Welcome to currency converter v1.1 by Paweł Suchy");
     };
 
-    const changeMainBackground = () => {
+    const changeMainBackground = (userInputValue) => {
         const main = document.querySelector(".js-main");
-        if (+mainInputPln.value >= 1000000) {
+        if (+userInputValue.value >= 1000000) {
             main.classList.add("main--januszed");
         } else {
             main.classList.remove("main--januszed");
         };
     };
 
-    const convertPlnToOtherCurrency = (currencyValue) => {
-        let plnValueElement = +mainInputPln.value;
+    const convertPlnToOtherCurrency = (currencyValue, userInputValue) => {
+        let plnValueElement = +userInputValue.value;
         return (plnValueElement / currencyValue).toFixed(2);
     };
 
-    const assignValueIntoTextField = () => {
+    const showConvertedValues = (userInputValue) => {
         const eurValueElement = 4.56;
         const chfValueElement = 4.13;
         const usdValueElement = 3.81;
         const eurElement = document.querySelector(".js-eur__value");
         const chfElement = document.querySelector(".js-chf__value");
         const usdElement = document.querySelector(".js-usd__value");
-        eurElement.innerText = convertPlnToOtherCurrency(eurValueElement);
-        chfElement.innerText = convertPlnToOtherCurrency(chfValueElement);
-        usdElement.innerText = convertPlnToOtherCurrency(usdValueElement);
+        eurElement.innerText = convertPlnToOtherCurrency(eurValueElement, userInputValue);
+        chfElement.innerText = convertPlnToOtherCurrency(chfValueElement, userInputValue);
+        usdElement.innerText = convertPlnToOtherCurrency(usdValueElement, userInputValue);
     };
 
-    init();
+    const init = () => {
+        const mainInputPln = document.querySelector(".js-form__input--pln");
+        changeMainBackground(mainInputPln);
+        showConvertedValues(mainInputPln);
+    };
+
+    welcome();
     mainForm.addEventListener("submit", (event) => {
         event.preventDefault();
-        changeMainBackground();
-        assignValueIntoTextField();
+        init();
     });
+
 }
