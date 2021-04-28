@@ -1,6 +1,4 @@
 {
-    const mainForm = document.querySelector(".js-form");
-
     const welcome = () => {
         console.log("Welcome to currency converter v1.1 by Paweł Suchy");
     };
@@ -33,14 +31,15 @@
 
     const init = () => {
         const mainInputPln = document.querySelector(".js-form__input--pln");
-        changeMainBackground(mainInputPln);
-        showConvertedValues(mainInputPln);
+        const mainForm = document.querySelector(".js-form");
+        mainForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            changeMainBackground(mainInputPln);
+            showConvertedValues(mainInputPln);
+        })
     };
 
     welcome();
-    mainForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-        init();
-    });
+    init();
 
 }
