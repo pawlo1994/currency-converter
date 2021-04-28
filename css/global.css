@@ -12,6 +12,7 @@ body {
     background-position: center;
     background-color: #ddd;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Orelega One', cursive;
     font-size: 18px;
 }
