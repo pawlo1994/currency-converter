@@ -13,7 +13,9 @@ Simple app which converts PLN to EUR, CHF and USD.
 
 ## How to use
 1. Write your amount in "PLN" field.
+![Input amount gif](images/input.gif)
 2. Then click on "Przelicz" button.
+![convert gif](images/convert.gif)
 3. Now you can read how much money you will get.
 
 ## Easter Egg
